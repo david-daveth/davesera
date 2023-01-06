@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root{
+    --primary-color: #131086;
+    --secondary-color: #b621f3;
+}
+
+
+*, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+body{
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    padding: 40px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 10px;
+    min-height: calc(100vh - 40px * 2);
+    overflow: hidden;
+}
+.login_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 150px;
+    padding-right: 60px;
+    background-color: #fff;
+}
+.login-header{
+    margin-bottom: 50px;
+}
+
+.login_left .login-header h1{
+    font-weight: 500;
+    font-size: 23px;
+}
+.login_left .login-header p{
+    font-size: 13px;
+    color: rgb(139, 133, 133);
+    margin-top: 10px;
+}
+.form-item{
+    margin-bottom: 30px;
+    position: relative;
+}
+.form-item label:not(.checkedLabel){
+    display: inline-block;
+    background-color: #fff;
+    font-size: 13px;
+    padding: 0 10px;
+    font-size: 14px;
+    position: absolute;
+    top: -8px;
+    left: 30px;
+}
+.checkbox{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+}
+input[type = 'checkbox'] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-color);
+}
+.checkbox label{
+    margin-top: 10px;
+    margin-left: -8px;
+}
+input[type = 'text'],
+input[type = 'password'] {
+    border: 1px solid black;
+    height: 40px;
+    padding: 0 2rem;
+    width: 100%;
+    outline: none;
+    transition: background .5s;
+    font-size: 18px;
+    border-radius: 150px;
+}
+button[type = 'submit'] {
+    width: 100%;
+    padding: .5rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 100px;
+    transition: all .5s ease-in-out;
+    margin-bottom: 30px;
+    border: none;
+}
+button[type = 'submit']:hover{
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.login-form-footer{
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+.login-form-footer a{
+    border: 1px solid black;
+    border-radius: 100px;
+    padding: .6rem;
+    font-size: 13px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    color: black;
+}
+.login-form-footer a:hover{
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    color: #fff;
+    border:none;
+}
+.login_right{
+    display: flex;
+    background-color: antiquewhite;
+}
+.login_right img{
+    width: 100%;
+}
+
+@media (max-width: 1350px) {
+  .login_left{
+    padding: 50px !important;
+  } 
+  .login-form{
+    width: 100%;
+  }
+  .login-form-footer{
+    flex-direction: column;
+    gap: 15px;
+  }
+  .login-form-footer a{
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+    body{
+        padding: 20px;
+    }
+    .container{
+        grid-template-columns: auto;
+    }
+    .login_left{
+        background-image: url('../img/login-img.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .login_right{
+        display: none;
+    }
+}
